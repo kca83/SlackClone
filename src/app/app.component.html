@@ -18,8 +18,7 @@
       </div>
       <div class="post-message">
         <h1>Right side bottom</h1>
-        <input placeholder="Type message here" [(ngModel)]="newMessage.body" (keyup.enter)="addMessage()">
-        <input class="btn btn-primary" type="submit" value="submit" (click)="addMessage()">
+        <app-input-message></app-input-message>
       </div>
     </div>
   </div>

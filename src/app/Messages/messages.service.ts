@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Message } from './message';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class MessagesService {
@@ -7,6 +8,7 @@ export class MessagesService {
   lastId: number = 0;
 
   messages: Message[] = [];
+  source = Observable.from(this.messages);
 
   constructor() { }
 
@@ -33,8 +35,12 @@ export class MessagesService {
     return message;
   }
 
-  getAllMessages(): Message[] {
-    return this.messages;
+  // getAllMessages(): Message[] {
+  //   return this.messages;
+  // }
+
+  getAllMessages(): Observable<Message> {
+    return this.source;
   }
 
   getMessageById(id: number): Message {
@@ -42,5 +48,5 @@ export class MessagesService {
       .filter(message => message.id === id)
       .pop();
   }
-  
+
 }

@@ -18,16 +18,9 @@ export class AppComponent {
 
   }
 
-  addMessage() {
-    console.log("clicked!");
-    console.log(this.newMessage);
-    this.messagesService.addMessage(this.newMessage);
-    this.newMessage = new Message();
-    this.getAllMessages();
-  }
 
-  getAllMessages() {
-    this.allMessages = this.messagesService.getAllMessages();
-  }
+  // getAllMessages() {
+  //   this.allMessages = this.messagesService.getAllMessages();
+  // }
 
 }

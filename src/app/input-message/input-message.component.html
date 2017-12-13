@@ -1,3 +1,2 @@
-<p>
-  input-message works!
-</p>
+<input placeholder="Type message here" [(ngModel)]="newMessage.body" (keyup.enter)="addMessage()">
+<input class="btn btn-primary" type="submit" value="submit" (click)="addMessage()">
