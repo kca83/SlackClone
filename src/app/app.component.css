@@ -1,0 +1,23 @@
+div {
+  height:100vh;
+  border-style: solid;
+  border-width: 5px;
+  color: white;
+  border-color: black;
+  text-shadow: 1px 0px 20px blue;
+}
+
+.messages {
+  background-color: rgb(252, 234, 204);
+  padding: 5% 2%;
+  height: 70%;
+  color: white;
+  text-shadow: 1px 0px 20px blue;
+  overflow: scroll;
+}
+
+.post-message {
+  background-color: rgb(242, 236, 227);
+  padding: 5% 2%;
+  height: 30%;
+}
