@@ -6,15 +6,7 @@
     <div class="col-9">
       <div class="messages">
         <h1>Right side top</h1>
-        <!--
-        <ul>
-          <li *ngFor="let message of allMessages">
-            <label>{{message.body}}</label>
-          </li>
-        </ul>
-      --><p *ngFor="let message of allMessages">
-      {{message.body}}
-          </p>
+          <app-message-list></app-message-list>
       </div>
       <div class="post-message">
         <h1>Right side bottom</h1>

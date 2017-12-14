@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Message } from './message';
-import {Observable} from "rxjs";
+import {Observable, Subject, BehaviorSubject} from "rxjs";
 
 @Injectable()
 export class MessagesService {
@@ -8,15 +8,21 @@ export class MessagesService {
   lastId: number = 0;
 
   messages: Message[] = [];
-  source = Observable.from(this.messages);
+  subject = new BehaviorSubject<Message>(new Message());
+  nextMessage = this.subject.asObservable();
 
-  constructor() { }
+  constructor() {
+  }
 
   addMessage(message: Message): MessagesService {
     if (!message.id) {
       message.id = ++this.lastId;
     }
     this.messages.push(message);
+    console.log("added message: " + message.id);
+    console.log(this.subject.getValue());
+    this.subject.next(message);
+    console.log(this.subject.getValue());
     return this;
   }
 
@@ -35,13 +41,13 @@ export class MessagesService {
     return message;
   }
 
-  // getAllMessages(): Message[] {
-  //   return this.messages;
-  // }
-
-  getAllMessages(): Observable<Message> {
-    return this.source;
+  getAllMessages(): Message[] {
+    return this.messages;
   }
+
+  // getAllMessages(): Observable<Message> {
+  //   return this.myObservable;
+  // }
 
   getMessageById(id: number): Message {
     return this.messages

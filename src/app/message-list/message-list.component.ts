@@ -9,25 +9,34 @@ import { MessagesService } from '../Messages/messages.service';
 })
 export class MessageListComponent implements OnInit {
 
-  allMessages: Message[];
+  allMessages: Message[] = [];
 
   constructor(private messagesService: MessagesService) { }
 
-  observer = {
-    next:(value) => {
-      console.log(value);
-      this.allMessages = value;
-    },
-    error:function(value){
+  // observer = {
+  //   next:(value) => {
+  //     console.log("From observable" + value);
+  //     this.allMessages.push(value);
+  //   },
+  //   error:function(value){
+  //
+  //   },
+  //   complete:function(){
+  //     console.log("Done");
+  //   }
+  // }
+  chatMessage: Message;
 
-    },
-    complete:function(){
-      console.log("Done");
-    }
+  display(value: Message) {
+    // this.chatMessage = value;
+    this.allMessages.push(value);
+    console.log(value);
   }
 
   ngOnInit() {
-    this.messagesService.getAllMessages().subscribe(this.observer);
+    // this.messagesService.getAllMessages().subscribe(this.observer);
+    // this.messagesService.nextMessage.subscribe(value => console.log(value));
+    this.messagesService.nextMessage.subscribe(value => this.display(value));
   }
 
 }

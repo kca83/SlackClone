@@ -5,8 +5,7 @@ import { Message } from '../Messages/message';
 @Component({
   selector: 'app-input-message',
   templateUrl: './input-message.component.html',
-  styleUrls: ['./input-message.component.css'],
-  providers: [MessagesService]
+  styleUrls: ['./input-message.component.css']
 })
 export class InputMessageComponent implements OnInit {
 

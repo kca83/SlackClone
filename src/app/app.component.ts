@@ -10,9 +10,9 @@ import { Message } from './Messages/message';
 })
 export class AppComponent {
   title = 'app';
-
-  @Input() newMessage: Message = new Message();
-  allMessages: Message[];
+  // 
+  // @Input() newMessage: Message = new Message();
+  // allMessages: Message[];
 
   constructor(private messagesService: MessagesService) {
 

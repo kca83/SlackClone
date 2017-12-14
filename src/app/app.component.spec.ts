@@ -4,6 +4,7 @@ import { MessageListComponent } from './message-list/message-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { InputMessageComponent } from './input-message/input-message.component';
+import { MessagesService } from './Messages/messages.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
       imports: [
         BrowserModule,
         FormsModule
-      ]
+      ],
+      providers: [MessagesService]
     }).compileComponents();
   }));
   it('should create the app', async(() => {

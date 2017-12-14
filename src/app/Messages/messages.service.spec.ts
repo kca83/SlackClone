@@ -14,6 +14,14 @@ describe('MessagesService', () => {
     expect(service).toBeTruthy();
   }));
 
+  describe('add a message to BehaviorSubject', () => {
+    it('should change the value of BehaviorSubject', inject([MessagesService], (service: MessagesService) => {
+      let message1 = new Message({body: "Hello 1", userId: 7});
+      service.addMessage(message1);
+      expect(service.subject.getValue().body === (message1.body));
+    }));
+  });
+
   describe('#getAllMessages()', () => {
 
     it('should return an empty array by default', inject([MessagesService], (service: MessagesService) => {
