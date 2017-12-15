@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MessageListComponent } from './message-list/message-list.component';
 import { InputMessageComponent } from './input-message/input-message.component';
 import { MessagesService } from './Messages/messages.service';
+import { HeadingImageComponent } from './heading-image/heading-image.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageListComponent,
-    InputMessageComponent
+    InputMessageComponent,
+    HeadingImageComponent
   ],
   imports: [
     BrowserModule,

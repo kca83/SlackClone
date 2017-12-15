@@ -25,12 +25,16 @@ export class MessageListComponent implements OnInit {
   //     console.log("Done");
   //   }
   // }
-  chatMessage: Message;
 
   display(value: Message) {
-    // this.chatMessage = value;
     this.allMessages.push(value);
     console.log(value);
+
+    // var objDiv = document.getElementById("chatArea");
+    // objDiv.scrollTop = objDiv.scrollHeight;
+    // objDiv.scrollIntoView(false);
+    // objDiv.scrollIntoViewIfNeeded();
+    // objDiv.scrollIntoView();
   }
 
   ngOnInit() {
