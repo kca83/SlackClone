@@ -10,6 +10,7 @@ export class MessagesService {
   messages: Message[] = [];
   subject = new BehaviorSubject<Message>(new Message());
   nextMessage = this.subject.asObservable();
+  listOfMessages = Observable.of(this.messages);
 
   constructor() {
   }

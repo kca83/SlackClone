@@ -41,6 +41,7 @@ export class MessageListComponent implements OnInit {
     // this.messagesService.getAllMessages().subscribe(this.observer);
     // this.messagesService.nextMessage.subscribe(value => console.log(value));
     this.messagesService.nextMessage.subscribe(value => this.display(value));
+    this.messagesService.listOfMessages.subscribe(value => console.log(value));
   }
 
 }

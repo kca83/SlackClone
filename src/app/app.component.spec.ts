@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { InputMessageComponent } from './input-message/input-message.component';
 import { MessagesService } from './Messages/messages.service';
+import { HeadingImageComponent } from './heading-image/heading-image.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,7 +13,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         MessageListComponent,
-        InputMessageComponent
+        InputMessageComponent,
+        HeadingImageComponent
       ],
       imports: [
         BrowserModule,
